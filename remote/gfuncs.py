@@ -231,7 +231,7 @@ def client_inter_cb_head(func):
     str = "void "
     str += func["func_name"] + "_callback("
     str += generate_async_cb_param_doma_end(func["params"])
-    str += "INOUT void *&internal_pri, OUT int error_internal)"
+    str += "INOUT void *internal_pri, OUT int error_internal)"
     return str
 
 def out_param_num(func):

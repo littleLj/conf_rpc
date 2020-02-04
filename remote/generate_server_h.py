@@ -230,7 +230,7 @@ def async_done_fun_params(func):
             if param["param_value"] == "data":
                 if param["param_type"] != "out":
                     str += "const "
-                str += "unsigned long &"
+                str += "unsigned long "
                 str += param["param_name"] + "_len"
                 str += ", "
                 str += "unsigned char *"
