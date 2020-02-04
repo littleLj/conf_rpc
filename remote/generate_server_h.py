@@ -13,12 +13,12 @@ type_tab = {
 }
 
 param_tab = {
-    "string": "std::string &",
-    "char_p": "char * &",
-    "uint": "unsigned int &",
-    "ulong": "unsigned long &",
-    "bool": "bool &",
-    "void_p": "void *&",
+    "string": "std::string ",
+    "char_p": "char * ",
+    "uint": "unsigned int ",
+    "ulong": "unsigned long ",
+    "bool": "bool ",
+    "void_p": "void *",
 }
 
 gen_data_param_tab = {
@@ -57,7 +57,7 @@ def generate_param(param):
     if param["param_value"] == "data":
         if param["param_type"] != "out":
             str += "const "
-        str += "unsigned long &"
+        str += "unsigned long "
         str += param["param_name"] + "_len"
         str += ", "
         str += type_tab[param["param_type"]] + BLANK

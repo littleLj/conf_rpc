@@ -57,7 +57,7 @@ param_tab = {
     "string": "                string ",
     "int": "                int ",
     "uint": "                unsigned int ",
-    "long": "                long & ",
+    "long": "                long ",
     "ulong": "                unsigned long ",
     "bool": "                bool ",
     "list_string": "                list<string> ",

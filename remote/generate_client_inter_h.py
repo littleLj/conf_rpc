@@ -15,12 +15,12 @@ type_tab = {
 }
 
 param_tab = {
-    "string": "std::string &",
-    "char_p": "char * &",
-    "uint": "unsigned int &",
-    "ulong": "unsigned long &",
-    "bool": "bool &",
-    "void_p": "void *&",
+    "string": "std::string ",
+    "char_p": "char * ",
+    "uint": "unsigned int ",
+    "ulong": "unsigned long ",
+    "bool": "bool ",
+    "void_p": "void *",
 }
 
 gen_data_param_tab = {
@@ -64,7 +64,7 @@ def generate_func_param(param):
     if param["param_value"] == "data":
         if param["param_type"] != "out":
             str += "const "
-        str += "unsigned long &"
+        str += "unsigned long "
         str += param["param_name"] + "_len"
         str += ", "
         str += type_tab[param["param_type"]] + BLANK
@@ -103,7 +103,7 @@ def show_callback_handler(classname):
             out_str = callback_handler_output_params(func)
             if len(out_str) > 0:
                 str += out_str + ", "
-            str += "INOUT void *&internal_pri, int error_internal) = 0;\n"
+            str += "INOUT void *internal_pri, int error_internal) = 0;\n"
             print str
     print "};\n"
 
@@ -163,7 +163,7 @@ def client_func_params(func):
                 param["param_type"] == "inout"):
             str += generate_func_param(param)
             str += ", "
-    str += "INOUT void *&internal_pri"
+    str += "INOUT void *internal_pri"
     return str
 
 
@@ -207,7 +207,7 @@ def show_sync_generate_data_func(func):
     out_str = put_sync_gendata_params(func)
     if len(out_str) > 0:
         str += out_str + ", "
-    str += "lt_condition *_internal_sync_cond, INOUT void *&internal_pri, lt_data_t *data);\n"
+    str += "lt_condition *_internal_sync_cond, INOUT void *internal_pri, lt_data_t *data);\n"
     print str
 
 
@@ -228,7 +228,7 @@ def show_async_generate_data_func(func):
     out_str = put_async_gendata_params(func)
     if len(out_str) > 0:
         str += out_str + ", "
-    str += "INOUT void *&internal_pri,"
+    str += "INOUT void *internal_pri,"
     str += " lt_data_t *data);\n"
     print str
 

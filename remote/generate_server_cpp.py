@@ -7,12 +7,12 @@ TWO_TEB = "        "
 THREE_TEB = "            "
 
 param_tab = {
-    "string": "std::string &",
-    "char_p": "char * &",
-    "uint": "unsigned int &",
-    "ulong": "unsigned long &",
-    "bool": "bool &",
-    "void_p": "void *&",
+    "string": "std::string ",
+    "char_p": "char * ",
+    "uint": "unsigned int ",
+    "ulong": "unsigned long ",
+    "bool": "bool ",
+    "void_p": "void *",
 }
 
 
